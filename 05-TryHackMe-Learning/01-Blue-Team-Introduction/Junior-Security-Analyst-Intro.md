@@ -39,9 +39,11 @@ Investigate suspicious activity using a simulated Security Information and Event
 
 **1. Alert identification**
 
-The SIEM dashboard displayed critical alerts relating to:
-- Unauthorized login attempts from `221.181.185.159` to port 22 (SSH).
-- A successful SSH login from the same suspicious IP address.
+The SIEM dashboard displayed two critical alerts relating to:
+- Unauthorized SSH login attempts from `221.181.185.159` to port 22.
+- A subsequent successful SSH login from the same suspicious IP address.
+
+The successful login following the unauthorised attempts increased the seriousness of the alert and required further investigation.
 
 **2. IP reputation investigation**
 
