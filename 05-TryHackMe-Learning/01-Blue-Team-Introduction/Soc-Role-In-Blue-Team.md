@@ -49,30 +49,31 @@ Examples introduced in the room included:
 An **Internal SOC** is a security operations team employed by an organisation to protect that organisation's own systems and data.
 
 A **Managed Security Service Provider (MSSP)** is an external provider that delivers agreed security services to other organisations. An MSSP may monitor several customers.
-Area	Internal SOC	MSSP
-Main focus	One organisation	Multiple customer organisations
-Environment	Develops deeper familiarity with its employer's environment	Works across different customer environments
-Communication	Internal IT, security and business teams	Customer contacts and the provider's own teams
-Priorities	The employer's security priorities	Customer priorities and agreed service levels
-Learning exposure	In-depth knowledge of one environment	Exposure to different environments and tools
+|Area	|Internal SOC |	MSSP
+|---|---|---|
+Main focus	|One organisation|	Multiple customer organisations
+Environment	|Develops deeper familiarity with its employer's environment	|Works across different customer environments
+Communication	|Internal IT, security and business teams|	Customer contacts and the provider's own teams
+Priorities|	The employer's security priorities|	Customer priorities and agreed service levels
+Learning exposure	|In-depth knowledge of one environment|	Exposure to different environments and tools
 
 
 Neither setting is automatically better for a beginner. The quality of training, supervision, tools and opportunities to investigate incidents matters.
-Career Development
+### Career Development
 The room presents SOC L1 as a possible starting point. With experience and continued learning, an analyst may progress towards L2 work or explore other paths, such as security engineering, incident response, threat intelligence or other specialised defensive roles.
 
 Career progression is not necessarily a single fixed ladder. It depends on practical experience, interests, skills and available opportunities.
-Task 5: Final Challenge
+### Task 5: Final Challenge
 The final challenge involved matching security scenarios to the specialist role best placed to handle them.
 
 The main lesson was that incidents and tasks should be directed to people with the appropriate expertise. Examples include:
-- Routine security alert: SOC analyst.
-- Major or active cyber incident: CIRT or incident response team.
-- Compliance and audit requirements: GRC specialist.
-- Vulnerability testing: Penetration tester.
-- Threat actor tactics and campaigns: Threat intelligence analyst.
+- **Routine security alert**: SOC analyst.
+- **Major or active cyber incident**: CIRT or incident response team.
+- **Compliance and audit requirements**: GRC specialist.
+- **Vulnerability testing**: Penetration tester.
+- **Threat actor tactics and campaigns**: Threat intelligence analyst.
 The challenge reinforced the importance of understanding team responsibilities and knowing when to escalate rather than trying to handle every issue alone.
-Key Learning Outcomes
+### Key Learning Outcomes
 After completing this room, I can:
 - Explain how security responsibilities may be arranged from executive leadership to technical teams.
 - Distinguish between Red, Blue and GRC teams.
@@ -81,7 +82,7 @@ After completing this room, I can:
 - Identify the purpose of specialised roles such as digital forensics, threat intelligence and application security.
 - Explain the difference between an Internal SOC and an MSSP.
 - Recognise why incidents and tasks should be escalated to the appropriate specialists.
-Personal Reflection
+### Personal Reflection
 This room helped me understand that a SOC analyst is part of a wider security function rather than working in isolation. An effective analyst needs to recognise the limits of their role, document findings clearly and escalate work to the right team when specialist support is needed.
 
 The comparison between an Internal SOC and an MSSP also showed me that security operations can be organised in different ways. Both models require sound investigation, communication, consistency and an understanding of the environment being protected.
