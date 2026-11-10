@@ -1,85 +1,72 @@
 
-# SentinelSOC – Architecture Planning
+# SentinelSOC Architecture Planning
 
-## 1. Project Overview
+## 1. Architecture Overview
 
-SentinelSOC is an open-source Security Operations Centre (SOC) lab designed to demonstrate practical security monitoring, log management, threat detection, security investigations and incident reporting.
+SentinelSOC will use a cloud-based Security Information and Event Management (SIEM) architecture, with **Wazuh Cloud** providing centralised security monitoring and threat detection.
 
-## 2. Host System Specifications
+The initial deployment will monitor a Windows 11 endpoint using the Wazuh Agent, forwarding collected security events to the cloud SIEM for analysis and investigation.
 
-| Component | Available Specification |
+## 2. Architecture Components
+
+| Component | Description |
 |---|---|
-| Processor | Intel Core i5 |
-| RAM | 8GB |
-| Virtualisation | Oracle VirtualBox |
-| Storage | To be confirmed |
-| Host Operating System | To be confirmed |
+| Wazuh Cloud | Central SIEM platform |
+| Windows 11 | Initial monitored endpoint and analyst workstation |
+| Wazuh Agent | Collects and forwards endpoint security events |
+| Web Browser | Accesses the Wazuh Cloud dashboard |
+| Oracle VirtualBox | Reserved for future lab expansion |
 
-## 3. Architecture Design Requirements
+## 3. Proposed Architecture and Data Flow
 
-The architecture must:
+The monitoring process will follow this sequence:
 
-- Operate within the available hardware resources.
-- Support security event and log collection.
-- Provide centralised security monitoring.
-- Support threat detection and alert generation.
-- Enable practical security investigations.
-- Support controlled attack simulations.
-- Allow documentation of incidents and findings.
+1. The Windows 11 endpoint generates system and security events.
+2. The Wazuh Agent collects relevant endpoint information.
+3. The agent forwards collected events through a secure connection to Wazuh Cloud.
+4. Wazuh processes and analyses the received security data.
+5. Security alerts are presented through the Wazuh dashboard.
+6. The SOC analyst reviews, investigates and documents relevant alerts.
 
-## 4. Proposed Architecture Components
+## 4. Architecture Diagram
 
-| Component | Purpose |
+A technical architecture diagram will be developed using diagrams.net.
+
+The diagram will illustrate:
+
+- Windows 11 monitored endpoint.
+- Wazuh Agent installation.
+- Secure communication with Wazuh Cloud.
+- Centralised event analysis and alert generation.
+- SOC analyst dashboard and investigation workflow.
+
+## 5. Deployment Approach
+
+The project will be implemented in the following stages:
+
+| Stage | Activity |
 |---|---|
-| SIEM Platform | Centralised security monitoring and alert management |
-| Linux Server | Hosts selected monitoring services |
-| Endpoint Machine | Generates security events and system logs |
-| Log Collection Agent | Collects and forwards endpoint logs |
-| Network Monitoring | Monitors network traffic and suspicious activity |
-| Attack Simulation | Generates controlled security events |
-| Analyst Workstation | Supports investigations and incident reporting |
+| 1 | Configure Wazuh Cloud environment |
+| 2 | Install and enrol the Wazuh Agent |
+| 3 | Verify endpoint connectivity and event collection |
+| 4 | Configure and validate security monitoring |
+| 5 | Conduct controlled threat detection scenarios |
+| 6 | Investigate alerts and document findings |
 
-## 5. Resource Considerations
+## 6. Security Considerations
 
-The lab will use a resource-conscious deployment strategy.
+- Use secure communication between the endpoint and Wazuh Cloud.
+- Protect agent enrolment credentials and access information.
+- Apply appropriate access controls to the SIEM dashboard.
+- Conduct security testing only within authorised environments.
+- Avoid exposing sensitive information in public GitHub documentation.
 
-The following considerations will guide implementation:
+## 7. Future Expansion
 
-- Avoid running multiple resource-intensive virtual machines simultaneously.
-- Prioritise lightweight Linux distributions.
-- Allocate RAM and CPU according to actual workload requirements.
-- Consider alternative deployment approaches where a complete SIEM stack exceeds available resources.
-- Monitor host and virtual machine resource consumption.
+Following successful implementation, the lab may incorporate additional endpoints, enhanced Windows telemetry and virtualised Linux environments through Oracle VirtualBox.
 
-## 6. SIEM Selection
+---
 
-Wazuh is a candidate SIEM platform.
-
-However, its official all-in-one quickstart recommends 4 vCPUs and 8 GiB RAM.
-
-A suitable deployment approach must be established before installation.
-
-Official documentation:
-
-https://documentation.wazuh.com/current/quickstart.html
-
-## 7. Network Architecture
-
-The lab will use an isolated VirtualBox network for controlled communication between lab machines.
-
-Network configuration, addressing and connectivity will be documented during architecture implementation.
-
-## 8. Architecture Diagram
-
-A diagrams.net architecture diagram will be developed after the monitoring platform and virtual machine deployment approach have been selected.
-
-## 9. Current Status
-
-- [x] Project directory created.
-- [x] Architecture documentation directory created.
-- [x] Initial architecture overview documented.
-- [x] Hardware specifications identified.
-- [ ] SIEM deployment approach selected.
-- [ ] Virtual machine specifications finalised.
-- [ ] Network topology designed.
-- [ ] Architecture diagram completed.
+**Architecture Status:** Planned  
+**SIEM Platform:** Wazuh Cloud  
+**Initial Endpoint:** Windows 11
