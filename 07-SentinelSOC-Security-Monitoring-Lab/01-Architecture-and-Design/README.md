@@ -1,32 +1,42 @@
 
-# 01 – Architecture and Design
+# Architecture and Design
 
 ## Overview
 
-This section documents the architecture and design of the SentinelSOC Security Monitoring Lab.
+This section documents the architecture, infrastructure requirements and technical design of the SentinelSOC Security Monitoring Lab.
 
-The objective is to establish a practical, resource-efficient virtualised Security Operations Centre (SOC) environment for security monitoring, log collection, threat detection and incident investigation.
+The project will use **Wazuh Cloud** as its central SIEM platform, eliminating the need to host the Wazuh server and indexer locally.
 
-## Architecture Objectives
+## Architecture Components
 
-- Design a functional SOC monitoring environment.
-- Identify the required virtual machines and security tools.
-- Establish secure virtual network connectivity.
-- Define log collection and monitoring workflows.
-- Document the architecture using diagrams.net.
+| Component | Purpose |
+|---|---|
+| Wazuh Cloud | Centralised SIEM and security monitoring |
+| Windows 11 | Analyst workstation and initial monitored endpoint |
+| Wazuh Agent | Endpoint log collection and monitoring |
+| Oracle VirtualBox | Future virtualised lab expansion |
+| diagrams.net | Architecture and network diagrams |
 
-## Architecture Diagram
+## Architecture Design
 
-The overall SentinelSOC architecture diagram will be added here following the design and validation of the lab components.
+The initial architecture will establish secure communication between the monitored Windows endpoint and Wazuh Cloud.
 
-## Planned Documentation
+Security events will be collected by the Wazuh Agent and forwarded through an encrypted outbound connection to the cloud platform for analysis, alerting and investigation.
 
-- System architecture
-- Virtual machine specifications
-- Network topology
-- Security monitoring components
-- Log collection and data flow
+## Documentation
 
-## Implementation Status
+- [Architecture Planning](architecture-planning.md)
+- [Host Environment](host-environment.md)
 
-**Architecture design:** Pending.
+## Future Expansion
+
+The lab may be expanded to include:
+
+- Additional Windows and Linux endpoints.
+- Sysmon for enhanced Windows telemetry.
+- Network security monitoring.
+- Controlled attack simulation and detection testing.
+
+---
+
+**Status:** Architecture Planning
