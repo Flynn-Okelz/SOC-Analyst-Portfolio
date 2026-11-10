@@ -1,31 +1,55 @@
 
 # SentinelSOC
-## Open-Source Security Monitoring & Threat Detection Lab
 
-**Project Category:** Blue Team | Security Operations | SIEM
+### Open-Source Security Monitoring & Threat Detection Lab
 
-**Project Status:** Planning and Architecture
+![SIEM](https://img.shields.io/badge/SIEM-Wazuh%20Cloud-blue)
+![Focus](https://img.shields.io/badge/Focus-Blue%20Team-red)
+![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
 
-### Project Overview
+## Overview
 
-SentinelSOC is a practical cybersecurity project focused on designing and implementing a virtualised Security Operations Centre (SOC) environment.
+SentinelSOC is a practical Security Operations Centre (SOC) project focused on implementing cloud-based security monitoring, threat detection and incident investigation using **Wazuh Cloud**.
 
-The project will demonstrate the practical application of security monitoring, log collection, threat detection, alert investigation and incident reporting using open-source security technologies.
+The project demonstrates endpoint monitoring, security event analysis, alert triage, threat detection and incident reporting through practical SOC scenarios.
 
-### Project Objectives
+## Objectives
 
-- Design and build a virtualised security monitoring environment.
-- Deploy and configure a Security Information and Event Management (SIEM) solution.
-- Monitor endpoint and network security events.
-- Investigate suspicious activities and security alerts.
-- Document detection scenarios, findings and incident reports.
+- Deploy and configure Wazuh Cloud.
+- Integrate and monitor Windows endpoints.
+- Collect and analyse security events.
+- Investigate and validate security alerts.
+- Develop practical threat detection scenarios.
+- Document security investigations and incident reports.
 
-### Documentation
+## Technology Stack
 
-All project stages, technical configurations, testing procedures, architecture diagrams and investigation findings will be documented as the project progresses.
+| Component | Technology |
+|---|---|
+| SIEM | Wazuh Cloud |
+| Endpoint | Windows 11 |
+| Monitoring Agent | Wazuh Agent |
+| Virtualisation | Oracle VirtualBox |
+| Documentation | Markdown, GitHub |
+| Architecture Design | diagrams.net |
 
-### Author
+## Project Structure
 
-Oladipupo Okelola
+| Directory | Description |
+|---|---|
+| `01-Architecture-and-Design` | Architecture and planning |
+| `02-SIEM-Deployment-and-Configuration` | SIEM setup |
+| `03-Endpoint-Monitoring` | Endpoint integration |
+| `04-Threat-Detection-and-Analysis` | Detection and analysis |
+| `05-Security-Investigations` | Alert investigations |
+| `06-Incident-Reporting` | Incident documentation |
+| `07-Evidence-and-Screenshots` | Technical evidence |
 
-MSc Cybersecurity | Aspiring SOC Analyst
+## Project Goal
+
+To demonstrate practical SOC analyst capabilities in security monitoring, threat detection, alert investigation and incident response within a controlled lab environment.
+
+---
+
+**Author:** Oladipupo Okelola  
+**Field:** Cybersecurity | Security Operations | Blue Team
