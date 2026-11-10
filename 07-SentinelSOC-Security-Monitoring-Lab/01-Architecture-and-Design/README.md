@@ -3,40 +3,49 @@
 
 ## Overview
 
-This section documents the architecture, infrastructure requirements and technical design of the SentinelSOC Security Monitoring Lab.
+This section documents the architecture of the SentinelSOC security monitoring lab. The design connects a Windows endpoint to a Wazuh Cloud SIEM platform and provides secure browser-based access for the SOC analyst.
 
-The project will use **Wazuh Cloud** as its central SIEM platform, eliminating the need to host the Wazuh server and indexer locally.
+## Architecture Diagram
+
+![SentinelSOC Cloud SIEM Architecture](SentinelSOC-Cloud-SIEM-Architecture.png)
+
+**Diagram files**
+- `sentinelsoc-architecture.png` — diagram preview
+- `SentinelSOC-Cloud-SIEM-Architecture.drawio` — editable diagrams.net source
 
 ## Architecture Components
 
 | Component | Purpose |
 |---|---|
-| Wazuh Cloud | Centralised SIEM and security monitoring |
-| Windows 11 | Analyst workstation and initial monitored endpoint |
-| Wazuh Agent | Endpoint log collection and monitoring |
-| Oracle VirtualBox | Future virtualised lab expansion |
-| diagrams.net | Architecture and network diagrams |
+| Dell Latitude E5470 (Windows 11 Pro) | Monitored endpoint |
+| Wazuh Agent | Collects and forwards endpoint security events |
+| Wazuh Server (Manager) | Analyses events and generates alerts |
+| Wazuh Indexer | Stores and indexes alert data |
+| Wazuh Dashboard | Supports security monitoring and investigation |
+| SOC analyst and web browser | Provides secure access to the dashboard |
 
-## Architecture Design
+## Communication and Data Flow
 
-The initial architecture will establish secure communication between the monitored Windows endpoint and Wazuh Cloud.
+1. **Endpoint to Wazuh Server:** The Wazuh Agent forwards endpoint events to the Wazuh Server over TCP port `1514`.
+2. **Wazuh Server to Indexer:** The manager analyses events and generates alerts. Alert data is forwarded to the Wazuh Indexer for storage and indexing.
+3. **Dashboard to Indexer:** The Wazuh Dashboard queries the Indexer and displays results for monitoring and investigation.
+4. **Analyst access:** The SOC analyst accesses the Wazuh Dashboard through a web browser over HTTPS/TLS (TCP port `443`).
 
-Security events will be collected by the Wazuh Agent and forwarded through an encrypted outbound connection to the cloud platform for analysis, alerting and investigation.
+## Architecture Objectives
 
-## Documentation
+- Define the lab's endpoint and centralised SIEM components.
+- Document event collection, alert processing and dashboard query flows.
+- Identify the analyst's secure access path.
+- Provide a reference for deployment, configuration and testing.
 
-- [Architecture Planning](architecture-planning.md)
-- [Host Environment](host-environment.md)
+## Implementation Status
 
-## Future Expansion
+- **Architecture design:** Completed
+- **Deployment and configuration:** Pending
+- **End-to-end validation:** Pending
 
-The lab may be expanded to include:
-
-- Additional Windows and Linux endpoints.
-- Sysmon for enhanced Windows telemetry.
-- Network security monitoring.
-- Controlled attack simulation and detection testing.
+*This diagram represents the intended lab architecture. Connectivity, services and data flows will be validated during implementation.*
 
 ---
 
-**Status:** Architecture Planning
+Part of the [SOC Analyst Portfolio](https://github.com/Flynn-Okelz/SOC-Analyst-Portfolio).
