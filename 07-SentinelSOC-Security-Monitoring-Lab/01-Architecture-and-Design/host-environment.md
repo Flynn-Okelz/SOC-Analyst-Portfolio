@@ -1,66 +1,45 @@
 
-# SentinelSOC – Host Environment Assessment
+# Host Environment
 
-## 1. Host System Specifications
+## 1. Host Specifications
 
 | Component | Specification |
 |---|---|
-| Operating System | Windows 11 |
-| Processor | Intel Core i5-6300U |
-| Processor Generation | 6th Generation (Skylake) |
-| Physical CPU Cores | 2 |
-| Logical Processors | 4 |
-| Base Frequency | 2.40 GHz |
-| Maximum Turbo Frequency | 3.00 GHz |
-| Installed RAM | 8GB |
+| Manufacturer | Dell |
+| Model | Latitude E5470 |
+| Operating System | Windows 11 Pro |
+| Processor | Intel Core i5-6300U @ 2.40GHz |
+| CPU Cores | 2 Cores / 4 Threads |
+| Installed RAM | 8GB DDR4 2133MHz |
 | Available Storage | 386GB |
-| Virtualisation Platform | Oracle VirtualBox |
-| VirtualBox Version | 7.1.6 r167084 |
-| Hardware Virtualisation | Intel VT-x Supported |
+| Virtualisation | Intel VT-x |
+| Hypervisor | Oracle VirtualBox 7.1.6 |
 
-## 2. Hardware Assessment
+## 2. Deployment Approach
 
-The host system provides sufficient storage capacity for the planned virtual machines, operating systems, security tools and project evidence.
+SentinelSOC will use **Wazuh Cloud** as its central SIEM platform.
 
-However, the 8GB RAM and dual-core processor present limitations when running multiple virtual machines and resource-intensive security monitoring services simultaneously.
+The local Windows 11 machine will serve as the analyst workstation and initial monitored endpoint.
 
-The lab will therefore follow a resource-conscious deployment strategy.
+The Wazuh Agent will collect endpoint security events and forward them to the cloud SIEM for monitoring and analysis.
 
-## 3. Virtualisation Considerations
+## 3. Resource Requirements
 
-- Use a maximum of one or two lightweight virtual machines at a time, subject to resource availability.
-- Avoid allocating all available physical memory to virtual machines.
-- Limit virtual CPU allocation to avoid excessive host contention.
-- Use lightweight Linux distributions where appropriate.
-- Monitor system performance during implementation.
+| Component | Deployment |
+|---|---|
+| Wazuh SIEM | Cloud-hosted |
+| Wazuh Agent | Local Windows endpoint |
+| SIEM Dashboard | Web browser |
+| Virtual Machines | Reserved for future expansion |
 
-## 4. SIEM Feasibility Assessment
+## 4. Infrastructure Considerations
 
-Wazuh remains a candidate for the primary SIEM platform.
+The cloud-based deployment reduces local hardware requirements by eliminating the need to host Wazuh Manager, Indexer and Dashboard locally.
 
-However, the standard all-in-one deployment and Docker single-node stack have hardware requirements that exceed the practical capacity of this host.
+The existing 8GB RAM configuration will be used for the initial implementation. Additional memory may support future virtualisation and lab expansion.
 
-A lightweight or staged deployment approach will be investigated before installation.
+## 5. Conclusion
 
-## 5. Resource Management Strategy
+The current host environment is suitable for the initial SentinelSOC deployment using Wazuh Cloud.
 
-- Preserve sufficient memory for Windows 11.
-- Avoid unnecessary background services.
-- Use snapshots before major configuration changes.
-- Monitor CPU, memory and disk utilisation.
-- Run resource-intensive components separately where necessary.
-- Prioritise stability over running multiple tools simultaneously.
-
-## 6. Architecture Decision
-
-**Status:** Pending SIEM deployment evaluation.
-
-No virtual machines or SIEM components have been installed at this stage.
-
-## 7. References
-
-- Intel Processor Specifications:
-  https://www.intel.com/content/www/us/en/products/sku/88190/intel-core-i56300u-processor-3m-cache-up-to-3-00-ghz/specifications.html
-
-- Wazuh Docker Deployment:
-  https://documentation.wazuh.com/current/deployment-options/docker/wazuh-container.html
+Local resources will primarily support endpoint monitoring, security investigations and analyst activities.
