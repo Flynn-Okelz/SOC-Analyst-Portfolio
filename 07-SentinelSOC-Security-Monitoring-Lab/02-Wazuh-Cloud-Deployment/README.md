@@ -17,10 +17,10 @@ This phase documents the deployment of the Wazuh Cloud SIEM platform and the onb
 
 | Component | Specification |
 |---|---|
-| SIEM Platform | Wazuh Cloud |
+| Planned SIEM Platform | Wazuh Cloud |
 | Endpoint | Dell Latitude E5470 |
 | Operating System | Windows 11 Pro |
-| Agent | Wazuh Agent |
+| Planned Agent | Wazuh Agent |
 | Processor | Intel Core i5-6300U @ 2.40 GHz |
 | Memory | 8 GB RAM |
 | Storage | 476 GB SSD |
